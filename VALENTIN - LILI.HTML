@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi Valentín?</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #d63447;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #si {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        #mensaje {
+            margin-top: 30px;
+            font-size: 2em;
+            color: #d63447;
+            display: none;
+        }
+        #imagenes {
+            margin-top: 20px;
+            display: none;
+        }
+        #imagenes img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿[Nombre de tu novia], quieres ser mi Valentín?</h1>
+    <div class="buttons">
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+    <div id="mensaje">
+        ¡Eres la mejor decisión de mi vida! 💖 Te amo mucho.
+    </div>
+    <div id="imagenes">
+        <img src="https://i.pinimg.com/564x/3b/5f/4e/3b5f4e7b9c9c9c9c9c9c9c9c9c9c9c9c.jpg" alt="Corazón">
+        <img src="https://i.pinimg.com/564x/5a/5f/4e/5a5f4e7b9c9c9c9c9c9c9c9c9c9c9c9c.jpg" alt="Flores">
+    </div>
+
+    <script>
+        const botonSi = document.getElementById('si');
+        const botonNo = document.getElementById('no');
+        const mensaje = document.getElementById('mensaje');
+        const imagenes = document.getElementById('imagenes');
+
+        botonSi.addEventListener('click', () => {
+            mensaje.style.display = 'block';
+            imagenes.style.display = 'block';
+            botonSi.style.display = 'none';
+            botonNo.style.display = 'none';
+        });
+
+        botonNo.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - botonNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - botonNo.offsetHeight);
+            botonNo.style.position = 'absolute';
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
